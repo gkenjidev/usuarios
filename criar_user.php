@@ -18,6 +18,7 @@ function criarUsuario($newUsername, $newPassword,$email){
         $sql = "insert into user (usuario,senha,email) values ('$newUsername', '$newPassword','$email' )";
         if($conn->query($sql)){
             echo "<script>alert('Usuário criado com sucesso!');</script>";
+            header('Location: index.php');
         }else{
             die("Erro: ".mysqli_connect_error());
         }
